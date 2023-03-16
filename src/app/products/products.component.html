@@ -1,0 +1,18 @@
+<h3>Liste de produits</h3>
+
+<div class="product-container">
+    <div *ngFor="let product of products" class="product">
+        <div>
+            <div>{{product.name}}</div>
+            <div *ngIf="product.onSale">
+                <div [ngClass]="'dashed'">{{product.price | currency : 'EUR'}}</div>
+                <div [ngClass]="'sale'">{{product.productOnSale | currency : 'EUR'}}</div>
+            </div>
+            <div *ngIf="!product.onSale">{{product.price | currency : 'EUR'}}</div>
+            <div>{{product.quantity}} en stock</div>
+            <button>Supprimer</button>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,23 @@
+.dashed {
+    text-decoration: line-through;
+}
+
+.sale {
+    color: white;
+    background-color: green;
+}
+.product-container {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: space-around;
+}
+.product {
+    padding: 1rem;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: sandybrown;
+}

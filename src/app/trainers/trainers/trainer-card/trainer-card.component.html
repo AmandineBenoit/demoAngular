@@ -1,0 +1,11 @@
+<div *ngIf="trainer" class="card" [ngClass]="{pink : trainer.gender === 'f', blue : trainer.gender === 'm'}">
+
+    <div *ngIf="trainer.onProject; else trainerblock">{{trainer.firstname}} est sur projet</div>
+        <ng-template #trainerblock>
+            <img [src]="trainer.avatar" [alt]=" 'avatar de ' +trainer.firstname">
+            <div>{{trainer.firstname}} {{trainer.lastname | uppercase}}</div>
+            <div>{{trainer.birthdate | date : 'dd/MM/yyyy'}}</div>
+            <button [disabled]=" trainer.onVacation" (click)="selectTrainer">Selectionner</button>
+        </ng-template>
+
+</div>

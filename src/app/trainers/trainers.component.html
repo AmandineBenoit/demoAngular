@@ -1,0 +1,30 @@
+<h2>La liste des formateurs</h2>
+<h3>Le formateur du jour est {{ (trainerOfTheDay.length === 0) ? ['En attente d un formateur'] : trainerOfTheDay}}</h3>
+<div class="card-container">
+    
+
+<app-trainer-card *ngFor="let trainer of trainers" [trainer]="trainer" (onSelect)="setTrainerOfTheDay($event)"></app-trainer-card>
+
+      
+
+</div>
+
+<div>
+    <h3>Mini Démo Switch</h3>
+    <div>
+        <label for="">Entrez un jour de la semaine : </label>
+        <input type="text" [(ngModel)]="weekDay">
+        <div>On mange quoi? </div>
+        <div [ngSwitch]="weekDay.toLowerCase()">
+            <div *ngSwitchCase=" 'lundi' ">Des patates</div>
+            <div *ngSwitchCase=" 'mardi' ">Des patates</div>
+            <div *ngSwitchCase=" 'mercredi' ">Des patates aussi</div>
+            <div *ngSwitchCase=" 'jeudi' ">Une pizza</div>
+            <div *ngSwitchCase=" 'vendredi' ">Des patates</div>
+            <div *ngSwitchCase=" 'samedi' ">Un burger</div>
+            <div *ngSwitchCase=" 'dimanche' ">Une p'tite salade</div>
+            <div *ngSwitchCase=" '' "></div>
+            <div *ngSwitchDelault>Rentre un jour valide stp</div>
+        </div>
+    </div>
+</div>
